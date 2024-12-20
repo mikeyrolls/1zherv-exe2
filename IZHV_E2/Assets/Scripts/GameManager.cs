@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
     /// GameObject used for the score text.
     /// </summary>
     public GameObject scoreText;
+
+    // /// <summary>
+    // /// GameObject used for the instructions.
+    // /// </summary>
+    // public GameObject instText;
     
     /// <summary>
     /// GameObject representing the main Player character.
@@ -117,6 +122,7 @@ public class GameManager : MonoBehaviour
         { // Setup already started game -> Retry.
             startText.SetActive(false);
             scoreText.SetActive(true);
+            // instText.SetActive(true);
             lossText.SetActive(false);
         }
         else
@@ -127,6 +133,7 @@ public class GameManager : MonoBehaviour
             // Setup the text.
             startText.SetActive(true);
             scoreText.SetActive(false);
+            // instText.SetActive(false);
             lossText.SetActive(false);
         }
         
@@ -162,6 +169,7 @@ public class GameManager : MonoBehaviour
         var sp = spawner.GetComponent<Spawner>();
         // Stop the obstacles.
         sp.ModifyObstacleSpeed(0.0f);
+
         // Stop spawning.
         sp.spawnObstacles = false;
         // Show the loss text.
